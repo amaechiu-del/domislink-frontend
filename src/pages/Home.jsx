@@ -145,7 +145,7 @@ export default function Home() {
       <footer className="bg-white border-t border-gray-200 mt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <p className="text-center text-gray-500 text-sm">
-            © 2024 DomisLink. Built with React 18, Vite, and Tailwind CSS.
+            © {new Date().getFullYear()} DomisLink. Built with React 18, Vite, and Tailwind CSS.
           </p>
         </div>
       </footer>

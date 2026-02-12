@@ -1,9 +1,14 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 
 export const useFetch = (fetchFunction, dependencies = []) => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [refreshKey, setRefreshKey] = useState(0);
+
+  const refetch = useCallback(() => {
+    setRefreshKey(prev => prev + 1);
+  }, []);
 
   useEffect(() => {
     let isMounted = true;
@@ -37,7 +42,7 @@ export const useFetch = (fetchFunction, dependencies = []) => {
     return () => {
       isMounted = false;
     };
-  }, dependencies);
+  }, [...dependencies, refreshKey]);
 
-  return { data, loading, error, refetch: () => {} };
+  return { data, loading, error, refetch };
 };
