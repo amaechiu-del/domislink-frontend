@@ -204,6 +204,20 @@ The app includes:
 - Network error detection
 - User-friendly error messages
 
+## 🔐 Security
+
+### Security Measures
+- Environment variables for sensitive configuration
+- Axios interceptors for secure API communication
+- Error boundaries prevent app crashes and information leakage
+- CodeQL scanning: ✅ No vulnerabilities detected
+
+### Known Development Dependencies Advisories
+The project has moderate severity advisories in development dependencies (esbuild/vite):
+- **Impact**: Development server only (does not affect production builds)
+- **Mitigation**: Production builds are not affected; vulnerability only exists in local development
+- **Resolution**: Monitoring for non-breaking security updates
+
 ## 📱 Responsive Design
 
 The application is fully responsive and works on:
