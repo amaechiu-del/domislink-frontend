@@ -1,1 +1,15 @@
-import Home from './pages/Home';export default function App(){return <Home/>;}
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import ErrorBoundary from './components/ErrorBoundary';
+import Home from './pages/Home';
+
+export default function App() {
+  return (
+    <ErrorBoundary>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
+      </Router>
+    </ErrorBoundary>
+  );
+}
